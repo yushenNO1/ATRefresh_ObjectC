@@ -19,6 +19,7 @@
 		0FAD77A62469527900B0B01A /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD77A22469527900B0B01A /* BaseTableViewController.m */; };
 		0FAD77A72469527900B0B01A /* BaseConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD77A42469527900B0B01A /* BaseConnectionController.m */; };
 		81FD264A78F508600DFBA59D /* libPods-ATRefresh_ObjectC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E93FD8B75C175525D9DE51 /* libPods-ATRefresh_ObjectC.a */; };
+		8F4E45AD24699E450035A813 /* ATRefresh_ObjectC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8F4E45AC24699E450035A813 /* ATRefresh_ObjectC.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		0FAD77A42469527900B0B01A /* BaseConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseConnectionController.m; sourceTree = "<group>"; };
 		0FAD77A52469527900B0B01A /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		17B3DD7E0A6B9762502509DB /* Pods-ATRefresh_ObjectC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATRefresh_ObjectC.debug.xcconfig"; path = "Target Support Files/Pods-ATRefresh_ObjectC/Pods-ATRefresh_ObjectC.debug.xcconfig"; sourceTree = "<group>"; };
+		8F4E45AC24699E450035A813 /* ATRefresh_ObjectC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATRefresh_ObjectC.podspec; sourceTree = "<group>"; };
 		C3E93FD8B75C175525D9DE51 /* libPods-ATRefresh_ObjectC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ATRefresh_ObjectC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1658DD2FEA700395788BB93 /* Pods-ATRefresh_ObjectC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATRefresh_ObjectC.release.xcconfig"; path = "Target Support Files/Pods-ATRefresh_ObjectC/Pods-ATRefresh_ObjectC.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +64,7 @@
 		0FAD777224693E5A00B0B01A = {
 			isa = PBXGroup;
 			children = (
+				8F4E45AC24699E450035A813 /* ATRefresh_ObjectC.podspec */,
 				0FAD779724693FB200B0B01A /* Source */,
 				0FAD777D24693E5A00B0B01A /* ATRefresh_ObjectC */,
 				0FAD777C24693E5A00B0B01A /* Products */,
@@ -198,6 +201,7 @@
 				0FAD778E24693E5C00B0B01A /* LaunchScreen.storyboard in Resources */,
 				0FAD778B24693E5C00B0B01A /* Assets.xcassets in Resources */,
 				0FAD778924693E5A00B0B01A /* Main.storyboard in Resources */,
+				8F4E45AD24699E450035A813 /* ATRefresh_ObjectC.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
