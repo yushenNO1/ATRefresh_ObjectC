@@ -14,10 +14,11 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.source_files     = 'Source/*.{h,m}'
   
-  s.dependency       'DZNEmptyDataSet'
-  s.dependency       'KVOController'
-  s.dependency       'MJRefresh'
-  s.dependency       'Alamofire'
+  s.public_header_files = 'Source/ATRefresh_ObjectC.h'
+  s.source_files        = 'Source/ATRefresh_ObjectC.h'
+  s.dependency       'DZNEmptyDataSet', '~> 1.8.1'
+  s.dependency       'KVOController','~> 1.2.0'
+  s.dependency       'MJRefresh','~> 3.4.3'
 end
 
 

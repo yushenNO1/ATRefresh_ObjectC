@@ -1,18 +1,15 @@
 //
-//  ATRefershController.h
+//  ATRefreshController.h
 //  RefreshController
 //
 //  Created by wangws1990 on 2018/7/19. 
 //  Copyright © 2018年 wangws1990. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import <MJRefresh/MJRefresh.h>
-#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-#import <KVOController.h>
-#import "ATRefersh.h"
+#import "ATRefresh_ObjectC.h"
+#import "ATRefresh.h"
 
-
-@interface ATRefershController : UIViewController <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@interface ATRefreshController : UIViewController <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (nonatomic, assign) id <ATRefreshDataSource>dataSource;//数据源
 

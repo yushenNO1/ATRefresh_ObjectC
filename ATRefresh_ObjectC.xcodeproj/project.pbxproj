@@ -13,8 +13,8 @@
 		0FAD778B24693E5C00B0B01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAD778A24693E5C00B0B01A /* Assets.xcassets */; };
 		0FAD778E24693E5C00B0B01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAD778C24693E5C00B0B01A /* LaunchScreen.storyboard */; };
 		0FAD779124693E5C00B0B01A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD779024693E5C00B0B01A /* main.m */; };
-		0FAD779A24693FCB00B0B01A /* ATRefershController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD779924693FCB00B0B01A /* ATRefershController.m */; };
-		0FAD779D2469405F00B0B01A /* ATRefersh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD779C2469405F00B0B01A /* ATRefersh.m */; };
+		0FAD779A24693FCB00B0B01A /* ATRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD779924693FCB00B0B01A /* ATRefreshController.m */; };
+		0FAD779D2469405F00B0B01A /* ATRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD779C2469405F00B0B01A /* ATRefresh.m */; };
 		0FAD77A1246950C500B0B01A /* BaseRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD77A0246950C500B0B01A /* BaseRefreshController.m */; };
 		0FAD77A62469527900B0B01A /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD77A22469527900B0B01A /* BaseTableViewController.m */; };
 		0FAD77A72469527900B0B01A /* BaseConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD77A42469527900B0B01A /* BaseConnectionController.m */; };
@@ -33,10 +33,10 @@
 		0FAD778D24693E5C00B0B01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FAD778F24693E5C00B0B01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FAD779024693E5C00B0B01A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0FAD779824693FCB00B0B01A /* ATRefershController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATRefershController.h; sourceTree = "<group>"; };
-		0FAD779924693FCB00B0B01A /* ATRefershController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATRefershController.m; sourceTree = "<group>"; };
-		0FAD779B2469405F00B0B01A /* ATRefersh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATRefersh.h; sourceTree = "<group>"; };
-		0FAD779C2469405F00B0B01A /* ATRefersh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATRefersh.m; sourceTree = "<group>"; };
+		0FAD779824693FCB00B0B01A /* ATRefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATRefreshController.h; sourceTree = "<group>"; };
+		0FAD779924693FCB00B0B01A /* ATRefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATRefreshController.m; sourceTree = "<group>"; };
+		0FAD779B2469405F00B0B01A /* ATRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATRefresh.h; sourceTree = "<group>"; };
+		0FAD779C2469405F00B0B01A /* ATRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATRefresh.m; sourceTree = "<group>"; };
 		0FAD779F246950C500B0B01A /* BaseRefreshController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseRefreshController.h; sourceTree = "<group>"; };
 		0FAD77A0246950C500B0B01A /* BaseRefreshController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseRefreshController.m; sourceTree = "<group>"; };
 		0FAD77A22469527900B0B01A /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
@@ -45,6 +45,7 @@
 		0FAD77A52469527900B0B01A /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		17B3DD7E0A6B9762502509DB /* Pods-ATRefresh_ObjectC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATRefresh_ObjectC.debug.xcconfig"; path = "Target Support Files/Pods-ATRefresh_ObjectC/Pods-ATRefresh_ObjectC.debug.xcconfig"; sourceTree = "<group>"; };
 		8F4E45AC24699E450035A813 /* ATRefresh_ObjectC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATRefresh_ObjectC.podspec; sourceTree = "<group>"; };
+		8F4E45AF2469A6270035A813 /* ATRefresh_ObjectC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATRefresh_ObjectC.h; sourceTree = "<group>"; };
 		C3E93FD8B75C175525D9DE51 /* libPods-ATRefresh_ObjectC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ATRefresh_ObjectC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1658DD2FEA700395788BB93 /* Pods-ATRefresh_ObjectC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATRefresh_ObjectC.release.xcconfig"; path = "Target Support Files/Pods-ATRefresh_ObjectC/Pods-ATRefresh_ObjectC.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,10 +102,11 @@
 		0FAD779724693FB200B0B01A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				0FAD779B2469405F00B0B01A /* ATRefersh.h */,
-				0FAD779C2469405F00B0B01A /* ATRefersh.m */,
-				0FAD779824693FCB00B0B01A /* ATRefershController.h */,
-				0FAD779924693FCB00B0B01A /* ATRefershController.m */,
+				8F4E45AF2469A6270035A813 /* ATRefresh_ObjectC.h */,
+				0FAD779B2469405F00B0B01A /* ATRefresh.h */,
+				0FAD779C2469405F00B0B01A /* ATRefresh.m */,
+				0FAD779824693FCB00B0B01A /* ATRefreshController.h */,
+				0FAD779924693FCB00B0B01A /* ATRefreshController.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -254,13 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FAD779A24693FCB00B0B01A /* ATRefershController.m in Sources */,
+				0FAD779A24693FCB00B0B01A /* ATRefreshController.m in Sources */,
 				0FAD778624693E5A00B0B01A /* ViewController.m in Sources */,
 				0FAD77A1246950C500B0B01A /* BaseRefreshController.m in Sources */,
 				0FAD77A62469527900B0B01A /* BaseTableViewController.m in Sources */,
 				0FAD77A72469527900B0B01A /* BaseConnectionController.m in Sources */,
 				0FAD778024693E5A00B0B01A /* AppDelegate.m in Sources */,
-				0FAD779D2469405F00B0B01A /* ATRefersh.m in Sources */,
+				0FAD779D2469405F00B0B01A /* ATRefresh.m in Sources */,
 				0FAD779124693E5C00B0B01A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

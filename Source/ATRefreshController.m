@@ -1,14 +1,14 @@
 //
-//  ATRefershController.m
+//  ATRefreshController.m
 //  RefreshController
 //
 //  Created by wangws1990 on 2018/7/19. 
 //  Copyright © 2018年 wangws1990. All rights reserved.
 //
 
-#import "ATRefershController.h"
+#import "ATRefreshController.h"
 
-@interface ATRefershController () {
+@interface ATRefreshController () {
     BOOL _isSetKVO;
     BOOL _needReload;
     __weak UIView *_emptyView;
@@ -31,7 +31,7 @@
 @property (nonatomic, copy) NSString *loaderTitle;
 @end
 
-@implementation ATRefershController
+@implementation ATRefreshController
 - (NSArray *)headers{
     if (!_headers && [self.dataSource respondsToSelector:@selector(refreshHeaderData)]) {
         _headers = [self.dataSource refreshHeaderData];
@@ -173,12 +173,12 @@
     
     if (hasMore) {
         self.scrollView.mj_footer.state = MJRefreshStateIdle;
-        ((MJRefreshAutoStateFooter *)self.scrollView.mj_footer).stateLabel.textColor = [ATRefersh colorWithRGB:0x666666];
+        ((MJRefreshAutoStateFooter *)self.scrollView.mj_footer).stateLabel.textColor = [ATRefresh colorWithRGB:0x666666];
         self.scrollView.mj_footer.hidden = NO;
     }
     else {
         self.scrollView.mj_footer.state = MJRefreshStateNoMoreData;
-        ((MJRefreshAutoStateFooter *)self.scrollView.mj_footer).stateLabel.textColor = [ATRefersh colorWithRGB:0x999999];
+        ((MJRefreshAutoStateFooter *)self.scrollView.mj_footer).stateLabel.textColor = [ATRefresh colorWithRGB:0x999999];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             CGFloat height  = (self.scrollView.contentSize.height);
             CGFloat sizeHeight  = (self.scrollView.frame.size.height);
@@ -196,7 +196,7 @@
 - (void)refreshData:(NSInteger)page {
     self.currentPage = page;
     
-    if ([NSStringFromClass(self.class) isEqualToString:NSStringFromClass(ATRefershController.class)]) {
+    if ([NSStringFromClass(self.class) isEqualToString:NSStringFromClass(ATRefreshController.class)]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (self.scrollView.mj_header.isRefreshing || self.scrollView.mj_footer.isRefreshing) {
                 [self endRefreshFailure];
@@ -242,7 +242,7 @@
     paragraph.alignment = NSTextAlignmentCenter;
     NSString *text = self.refreshing ? self.loaderTitle : (self.reachable ?self.emptyTitle:self.errorTitle);
     NSDictionary* attributes = @{NSFontAttributeName : [UIFont systemFontOfSize:16.0f],
-                                 NSForegroundColorAttributeName :[ATRefersh colorWithRGB:0x999999],
+                                 NSForegroundColorAttributeName :[ATRefresh colorWithRGB:0x999999],
                                  NSParagraphStyleAttributeName : paragraph};
     return [[NSMutableAttributedString alloc] initWithString:(text ? [NSString stringWithFormat:@"\r\n%@", text] : @"")
                                                   attributes:attributes];
@@ -270,7 +270,7 @@
     return nil;
 }
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
-    return -[ATRefersh NAVI_HIGHT]/2;
+    return -[ATRefresh NAVI_HIGHT]/2;
 }
 - (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView {
     return 1;
@@ -288,7 +288,7 @@
     self.refreshing ? [self headerRefreshing] : nil;
 }
 - (BOOL)reachable{
-    return  [ATRefersh reachable];
+    return  [ATRefresh reachable];
 }
 
 

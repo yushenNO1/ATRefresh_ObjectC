@@ -6,11 +6,11 @@
 //  Copyright © 2020 wangws1990. All rights reserved.
 //
 
-#import "ATRefershController.h"
+#import "ATRefreshController.h"
 #import <Masonry.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseRefreshController : ATRefershController
+@interface BaseRefreshController : ATRefreshController
 
 @end
 

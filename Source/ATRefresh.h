@@ -1,5 +1,5 @@
 //
-//  ATRefersh.h
+//  ATRefresh.h
 //  ATRefresh_ObjectC
 //
 //  Created by wangws1990 on 2020/5/11.
@@ -36,7 +36,7 @@ typedef NS_ENUM(NSUInteger, ATRefreshOption) {
 - (NSString *)refreshEmptyToast;
 @end
 
-@interface ATRefersh : NSObject
+@interface ATRefresh : NSObject
 + (UIColor *)colorWithRGB:(uint32_t)rgbValue;
 + (BOOL)reachable;
 + (BOOL)iPad;
