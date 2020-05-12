@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import <ATKit.h>
+#import "ATTableController.h"
+#import "ATConnectionController.h"
+
 @interface ViewController ()
 @property (strong, nonatomic) NSArray *listData;
 @end
@@ -41,5 +44,22 @@
     UITableViewCell *cell = [UITableViewCell cellForTableView:tableView indexPath:indexPath];
     cell.textLabel.text = self.listData[indexPath.row];
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString *title = self.listData[indexPath.row];
+    if ([title isEqualToString:@"ConnectionView"]) {
+        [[UIViewController rootTopPresentedController].navigationController pushViewController:[ATConnectionController new] animated:true];
+    }else{
+        ATRefreshOption option = ATRefreshNone;
+        if ( [title isEqualToString:@"下拉刷新"]) {
+            option = ATHeaderRefresh | ATHeaderAutoRefresh;
+        }else if ([title isEqualToString:@"上拉加载"]){
+            option = ATFooterRefresh | ATFooterAutoRefresh;
+        }else if ([title isEqualToString:@"上拉下拉"]){
+            option = ATRefreshDefault;
+        }
+        [[UIViewController rootTopPresentedController].navigationController pushViewController:[ATTableController vcWithOption:option] animated:YES];
+    }
 }
 @end

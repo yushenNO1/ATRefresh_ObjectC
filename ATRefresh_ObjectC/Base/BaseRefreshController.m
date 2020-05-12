@@ -49,13 +49,13 @@
     return [UIImage imageNamed:@"icon_net_error"];
 }
 - (NSString *)refreshLoaderToast{
-    return @"Data Loading...";
+    return @"数据加载中...";
 }
 - (NSString *)refreshErrorToast{
-    return @"Net Error...";
+    return @"网络错误...";
 }
 - (NSString *)refreshEmptyToast{
-    return  @"Data Empty...";
+    return  @"没有数据...";
 }
 
 #pragma mark UIGestureRecognizerDelegate

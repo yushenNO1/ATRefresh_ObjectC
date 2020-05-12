@@ -12,5 +12,6 @@ target :ATRefresh_ObjectC  do
     
     pod 'YYKit'
     pod 'Masonry'
+    pod 'AFNetworking'
     pod 'ATKit_ObjectC'
 end

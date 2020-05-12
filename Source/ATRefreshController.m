@@ -70,10 +70,10 @@
     return _errorTitle;
 }
 - (NSString *)emptyTitle{
-    if (!_errorTitle && [self.dataSource respondsToSelector:@selector(refreshEmptyToast)]) {
-        _errorTitle = [self.dataSource refreshEmptyToast];
+    if (!_emptyTitle && [self.dataSource respondsToSelector:@selector(refreshEmptyToast)]) {
+        _emptyTitle = [self.dataSource refreshEmptyToast];
     }
-    return _errorTitle;
+    return _emptyTitle;
 }
 - (NSString *)loaderTitle{
     if (!_loaderTitle && [self.dataSource respondsToSelector:@selector(refreshLoaderToast)]) {
