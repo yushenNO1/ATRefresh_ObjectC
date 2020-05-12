@@ -12,13 +12,17 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/tianya2416/ATRefresh_ObjectC.git', :tag => s.version }
   s.platform         = :ios, '9.0'
   s.requires_arc     = true
-  s.source_files     = 'Source/*.{h,m}'
   
-  s.public_header_files = 'Source/ATRefresh_ObjectC.h'
-  s.source_files        = 'Source/ATRefresh_ObjectC.h'
+  s.source_files     = 'Source/*.{h,m}'
+
+  
+  
   s.dependency       'DZNEmptyDataSet', '~> 1.8.1'
   s.dependency       'KVOController','~> 1.2.0'
   s.dependency       'MJRefresh','~> 3.4.3'
+  
+  s.public_header_files = 'Source/*.h'
+    
 end
 
 

@@ -9,8 +9,7 @@
 #ifndef ATRefresh_ObjectC_h
 #define ATRefresh_ObjectC_h
 #import <MJRefresh/MJRefresh.h>
+#import <KVOController/KVOController.h>
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-#import <KVOController.h>
-
 
 #endif /* ATRefresh_ObjectC_h */
