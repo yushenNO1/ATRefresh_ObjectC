@@ -11,7 +11,7 @@
     [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATRefreshNone];
     
-    2、2 无下拉刷新、无上拉加载
+    2、2 有下拉刷新、无上拉加载
     [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATHeaderRefresh|ATHeaderAutoRefresh];
     
