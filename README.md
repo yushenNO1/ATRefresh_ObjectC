@@ -23,6 +23,8 @@
     [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATRefreshDefault];
    
+    For Example
+   
      [ATTool getData:@"https://api.zhuishushenqi.com/book/by-categories" params:params success:^(id  _Nonnull object) {
             if (page == 1) {
                 [self.listData removeAllObjects];
@@ -38,3 +40,7 @@
        
             [self endRefreshFailure];
        }];
+       
+3、ATRefresh_Swift版本:
+    
+    [Swift版本](https://github.com/tianya2416/ATRefresh_Swift.git)
