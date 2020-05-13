@@ -38,7 +38,7 @@ typedef NS_ENUM(NSUInteger, ATRefreshOption) {
 
 @interface ATRefresh : NSObject
 + (UIColor *)colorWithRGB:(uint32_t)rgbValue;
-+ (BOOL)reachable;
 + (CGFloat)NAVI_HIGHT;
++ (BOOL)reachable;
 @end
 
