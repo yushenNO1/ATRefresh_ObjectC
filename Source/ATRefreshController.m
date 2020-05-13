@@ -8,7 +8,7 @@
 
 #import "ATRefreshController.h"
 
-@interface ATRefreshController () {
+@interface ATRefreshController ()<UIGestureRecognizerDelegate> {
     BOOL _isSetKVO;
     BOOL _needReload;
     __weak UIView *_emptyView;
@@ -86,6 +86,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
+    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
 }
 #pragma mark - refresh 刷新处理
 - (void)setupRefresh:(UIScrollView *)scrollView option:(ATRefreshOption)option {
@@ -290,6 +294,26 @@
 - (BOOL)reachable{
     return  [ATRefresh reachable];
 }
-
+#pragma mark UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    return YES ;
+}
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleDefault;
+}
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+//返回支持的方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+//这个是返回优先方向
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
 
 @end
