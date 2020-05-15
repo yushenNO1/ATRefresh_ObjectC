@@ -38,7 +38,7 @@
     }
     return _headers;
 }
-- (NSArray *)footer{
+- (NSArray *)footers{
     if (!_footers && [self.dataSource respondsToSelector:@selector(refreshFooterData)]) {
         _footers = [self.dataSource refreshFooterData];
     }

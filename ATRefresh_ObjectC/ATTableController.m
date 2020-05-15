@@ -30,15 +30,17 @@
     NSInteger count = 40;
     NSDictionary *params =@{@"gender":@"male",@"major":@"玄幻",@"start":@(page),@"limit":@(count),@"type":@"hot",@"minor":@""};
     [ATTool getData:@"https://api.zhuishushenqi.com/book/by-categories" params:params success:^(id  _Nonnull object) {
-        if (page == 1) {
-            [self.listData removeAllObjects];
-        }
-        NSArray *datas = [NSArray modelArrayWithClass:ATModel.class json:object];
-        if (datas.count > 0) {
-            [self.listData addObjectsFromArray:datas];
-        }
-        [self.tableView reloadData];
-        [self endRefresh:datas.count >= count];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{//动画看的更清楚
+            if (page == 1) {
+                [self.listData removeAllObjects];
+            }
+            NSArray *datas = [NSArray modelArrayWithClass:ATModel.class json:object];
+            if (datas.count > 0) {
+                [self.listData addObjectsFromArray:datas];
+            }
+            [self.tableView reloadData];
+            [self endRefresh:datas.count >= count];
+        });
     } failure:^(NSError * _Nonnull error) {
         [self endRefreshFailure];
     }];
