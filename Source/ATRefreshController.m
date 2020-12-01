@@ -7,7 +7,8 @@
 //
 
 #import "ATRefreshController.h"
-
+#define RefreshPageStart (1)
+#define RefreshPageSize (20)
 @interface ATRefreshController ()<UIGestureRecognizerDelegate> {
     BOOL _isSetKVO;
     BOOL _needReload;
@@ -94,12 +95,11 @@
 #pragma mark - refresh 刷新处理
 - (void)setupRefresh:(UIScrollView *)scrollView option:(ATRefreshOption)option {
     self.scrollView = scrollView;
+    //无
     if (option == ATRefreshNone) {
-        if ([self respondsToSelector:@selector(headerRefreshing)]) {
-            [self headerRefreshing];
-        }
-        return;
+        [self headerRefreshing];
     }
+    //下拉
     if (option & ATHeaderRefresh) {
         MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
         header.automaticallyChangeAlpha = YES;
@@ -109,13 +109,12 @@
             [header setImages:@[self.headers.firstObject] forState:MJRefreshStateIdle];
             [header setImages:self.headers duration:0.35f forState:MJRefreshStateRefreshing];
         }
-        
         if (option & ATHeaderAutoRefresh) {
             [self headerRefreshing];
         }
         scrollView.mj_header = header;
     }
-    
+    //上拉
     if (option & ATFooterRefresh) {
         MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefreshing)];
         footer.triggerAutomaticallyRefreshPercent = 1;//-20
@@ -131,30 +130,29 @@
         [footer setTitle:@"" forState:MJRefreshStateRefreshing];
         [footer setTitle:@"" forState:MJRefreshStateWillRefresh];
         [footer setTitle:@"" forState:MJRefreshStateIdle];
-        
-        NSLog(@"%@",@(option & ATFooterAutoRefresh));
         if (option & ATFooterAutoRefresh) {
-            if (self.currentPage == 0) {
-                self.refreshing = YES;
-            }
             [self footerRefreshing];
-        }
-        else if (option & ATFooterDefaultHidden) {
-            footer.hidden = YES;
         }
         scrollView.mj_footer = footer;
     }
 }
 - (void)headerRefreshing {
-    self.refreshing = YES;
-    self.scrollView.mj_footer.hidden = YES;
-    self.currentPage = RefreshPageStart;
-    [self refreshData:self.currentPage];
+    if (self.refreshing == NO) {
+        self.refreshing = YES;
+        self.scrollView.mj_footer.hidden = YES;
+        self.currentPage = RefreshPageStart;
+        if ([self respondsToSelector:@selector(refreshData:)]) {
+            [self refreshData:self.currentPage];
+        }
+    }
 }
 
 - (void)footerRefreshing {
-    self.currentPage++;
-    [self refreshData:self.currentPage];
+    if (self.refreshing == NO) {
+        self.refreshing = YES;
+        self.currentPage++;
+        [self refreshData:self.currentPage];
+    }
 }
 
 - (void)endRefreshFailure {
@@ -289,7 +287,7 @@
     return !self.refreshing;
 }
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view {
-    self.refreshing ? [self headerRefreshing] : nil;
+    self.refreshing ? nil : [self headerRefreshing];
 }
 - (BOOL)reachable{
     return  [ATRefresh reachable];

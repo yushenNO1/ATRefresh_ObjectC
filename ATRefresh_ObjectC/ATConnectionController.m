@@ -22,8 +22,8 @@
     [self setupRefresh:self.collectionView option:ATRefreshDefault];
 }
 - (void)refreshData:(NSInteger)page{
-    NSInteger count = 40;
-    NSDictionary *params =@{@"gender":@"male",@"major":@"玄幻",@"start":@(page),@"limit":@(count),@"type":@"hot",@"minor":@""};
+    NSInteger count = 20;
+    NSDictionary *params =@{@"gender":@"male",@"major":@"玄幻",@"start":@((page - 1) * 20 + 1),@"limit":@(count),@"type":@"hot",@"minor":@""};
     [ATTool getData:@"https://api.zhuishushenqi.com/book/by-categories" params:params success:^(id  _Nonnull object) {
         if (page == 1) {
             [self.listData removeAllObjects];

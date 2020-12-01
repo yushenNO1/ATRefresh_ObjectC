@@ -18,22 +18,12 @@
 + (BOOL)reachable{
     return YES;
 }
-
-+ (BOOL)iPad{
-    return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
-}
-+ (BOOL)iPhone_X{
-    if ([ATRefresh iPad]) {
-        return NO;
-    }
++ (CGFloat)NAVI_HIGHT{
     UIView *window = [UIApplication sharedApplication].delegate.window;
     if (@available(iOS 11.0, *)) {
         UIEdgeInsets inset = window.safeAreaInsets;
-        return (inset.bottom == 34) || (inset.bottom == 21);
+        return inset.top + 44;
     }
-    return NO;
-}
-+ (CGFloat)NAVI_HIGHT{
-    return [self iPhone_X] ? 88 : 64;
+    return 64;
 }
 @end

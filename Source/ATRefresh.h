@@ -7,9 +7,6 @@
 //
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-#define RefreshPageStart (1)
-#define RefreshPageSize (20)
 /**
  *  集成刷新控件
  */
@@ -19,8 +16,7 @@ typedef NS_ENUM(NSUInteger, ATRefreshOption) {
     ATFooterRefresh       = 1 << 1,
     ATHeaderAutoRefresh   = 1 << 2,
     ATFooterAutoRefresh   = 1 << 3,
-    ATFooterDefaultHidden = 1 << 4,
-    ATRefreshDefault = (ATHeaderRefresh | ATHeaderAutoRefresh | ATFooterRefresh | ATFooterDefaultHidden),
+    ATRefreshDefault = (ATHeaderRefresh | ATHeaderAutoRefresh | ATFooterRefresh | ATFooterAutoRefresh),
 };
 @protocol ATRefreshDataSource <NSObject>
 
