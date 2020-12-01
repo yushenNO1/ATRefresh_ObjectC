@@ -253,7 +253,7 @@
     return nil;
 }
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
-    return self.reachable ? (self.refreshing ? self.loaderData : self.emptyData) : self.errorData;
+    return self.refreshing ? self.loaderData : (self.reachable ? self.emptyData : self.errorData);
 }
 
 #pragma mark - DZNEmptyDataSetDelegate
