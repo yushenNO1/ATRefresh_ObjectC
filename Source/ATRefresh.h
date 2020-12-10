@@ -18,14 +18,15 @@ typedef NS_ENUM(NSUInteger, ATRefreshOption) {
     ATFooterAutoRefresh   = 1 << 3,
     ATRefreshDefault = (ATHeaderRefresh | ATHeaderAutoRefresh | ATFooterRefresh | ATFooterAutoRefresh),
 };
-@protocol ATRefreshDataSource <NSObject>
 
+@protocol ATRefreshDataSource <NSObject>
 @required
 - (NSArray <UIImage *>*)refreshFooterData;
 - (NSArray <UIImage *>*)refreshHeaderData;
 - (NSArray <UIImage *>*)refreshLoaderData;
 - (UIImage *)refreshEmptyData;
 - (UIImage *)refreshErrorData;
+- (BOOL)refreshNetAvailable;
 @optional
 - (NSString *)refreshLoaderToast;
 - (NSString *)refreshErrorToast;
@@ -33,8 +34,15 @@ typedef NS_ENUM(NSUInteger, ATRefreshOption) {
 @end
 
 @interface ATRefresh : NSObject
+
 + (UIColor *)colorWithRGB:(uint32_t)rgbValue;
-+ (CGFloat)NAVI_HIGHT;
-+ (BOOL)reachable;
+
++ (BOOL)at_iphoneX;
+
++ (CGFloat)at_statusBar;
+
++ (CGFloat)at_naviBar;
+
++ (CGFloat)at_tabBar;
 @end
 

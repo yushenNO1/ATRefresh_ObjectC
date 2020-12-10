@@ -7,7 +7,7 @@
 //
 
 #import "BaseRefreshController.h"
-
+#import <AFNetworking.h>
 @interface BaseRefreshController ()<ATRefreshDataSource>
 @property (strong, nonatomic) NSArray *imageDatas;
 @end
@@ -58,8 +58,7 @@
     return  @"没有数据...";
 }
 
-#pragma mark UIGestureRecognizerDelegate
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    return YES ;
+- (BOOL)refreshNetAvailable {
+    return [AFNetworkReachabilityManager sharedManager].reachable;
 }
 @end

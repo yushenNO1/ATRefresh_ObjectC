@@ -7,7 +7,7 @@
 //
 
 #import "ATRefresh.h"
-
+#define at_inset       [UIApplication sharedApplication].delegate.window.safeAreaInsets
 @implementation ATRefresh
 + (UIColor *)colorWithRGB:(uint32_t)rgbValue {
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16) / 255.0f
@@ -15,15 +15,25 @@
                             blue:(rgbValue & 0xFF) / 255.0f
                            alpha:1];
 }
-+ (BOOL)reachable{
-    return YES;
-}
-+ (CGFloat)NAVI_HIGHT{
-    UIView *window = [UIApplication sharedApplication].delegate.window;
++ (BOOL)at_iphoneX{
     if (@available(iOS 11.0, *)) {
-        UIEdgeInsets inset = window.safeAreaInsets;
-        return inset.top + 44;
+        return at_inset.bottom > 0 ? true : false;  //34 or 21
     }
-    return 64;
+    return NO;
+}
++ (CGFloat)at_statusBar{
+    if (@available(iOS 11.0, *)) {
+        return at_inset.top;
+    }
+    return 20;
+}
++ (CGFloat)at_tabBar{
+    if (@available(iOS 11.0, *)) {
+        return at_inset.bottom;
+    }
+    return 0;
+}
++ (CGFloat)at_naviBar{
+    return  (44 + [ATRefresh at_statusBar]);
 }
 @end

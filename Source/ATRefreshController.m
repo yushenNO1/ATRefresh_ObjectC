@@ -8,7 +8,6 @@
 
 #import "ATRefreshController.h"
 #define RefreshPageStart (1)
-#define RefreshPageSize (20)
 @interface ATRefreshController ()<UIGestureRecognizerDelegate> {
     BOOL _isSetKVO;
     BOOL _needReload;
@@ -33,6 +32,9 @@
 @end
 
 @implementation ATRefreshController
+- (void)dealloc {
+    _scrollView.delegate = nil;
+}
 - (NSArray *)headers{
     if (!_headers && [self.dataSource respondsToSelector:@selector(refreshHeaderData)]) {
         _headers = [self.dataSource refreshHeaderData];
@@ -82,15 +84,14 @@
     }
     return _loaderTitle;
 }
-- (void)dealloc {
-    _scrollView.delegate = nil;
+- (BOOL)reachable{
+    if ([self.dataSource respondsToSelector:@selector(refreshNetAvailable)]) {
+        return  [self.dataSource refreshNetAvailable];
+    }
+    return NO;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
-        [self setEdgesForExtendedLayout:UIRectEdgeNone];
-    }
-    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
 }
 #pragma mark - refresh 刷新处理
 - (void)setupRefresh:(UIScrollView *)scrollView option:(ATRefreshOption)option {
@@ -259,7 +260,6 @@
 #pragma mark - DZNEmptyDataSetDelegate
 // 是否可以动画显示
 - (BOOL)emptyDataSetShouldAnimateImageView:(UIScrollView *)scrollView {
-    
     return NO;
 }
 - (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
@@ -272,7 +272,7 @@
     return nil;
 }
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
-    return -[ATRefresh NAVI_HIGHT]/2;
+    return - [ATRefresh at_naviBar]/2;
 }
 - (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView {
     return 1;
@@ -288,9 +288,6 @@
 }
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view {
     self.refreshing ? nil : [self headerRefreshing];
-}
-- (BOOL)reachable{
-    return  [ATRefresh reachable];
 }
 #pragma mark UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{

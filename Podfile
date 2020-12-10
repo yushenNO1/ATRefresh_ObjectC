@@ -14,4 +14,6 @@ target :ATRefresh_ObjectC  do
     pod 'Masonry'
     pod 'AFNetworking'
     pod 'ATKit_ObjectC'
+    
+    pod 'OpenSSL-Universal', :path => './PodLocal/OpenSSL-Universal/'
 end
