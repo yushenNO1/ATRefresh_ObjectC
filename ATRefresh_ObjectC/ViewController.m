@@ -10,7 +10,7 @@
 #import <ATKit.h>
 #import "ATTableController.h"
 #import "ATConnectionController.h"
-
+#import "ATEmptyController.h"
 @interface ViewController ()
 @property (strong, nonatomic) NSArray *listData;
 @end
@@ -19,14 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:ATRefreshDefault];
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
 - (void)refreshData:(NSInteger)page{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.listData = @[@"下拉刷新",@"上拉加载",@"上拉下拉",@"无上下拉",@"ConnectionView"];
+        self.listData = @[@"下拉刷新",@"上拉加载",@"上拉下拉",@"无上下拉",@"ConnectionView",@"Empty Data1",@"Empty Data2"];
         [self.tableView reloadData];
         [self endRefresh:NO];
     });
@@ -50,7 +49,12 @@
     NSString *title = self.listData[indexPath.row];
     if ([title isEqualToString:@"ConnectionView"]) {
         [[UIViewController rootTopPresentedController].navigationController pushViewController:[ATConnectionController new] animated:true];
-    }else{
+    }else if ([title isEqualToString:@"Empty Data1"]){
+        [[UIViewController rootTopPresentedController].navigationController pushViewController:[ATEmptyController vcWithNeedTitle:YES] animated:YES];
+    }else if ([title isEqualToString:@"Empty Data2"]){
+        [[UIViewController rootTopPresentedController].navigationController pushViewController:[ATEmptyController vcWithNeedTitle:NO] animated:YES];
+    }
+    else{
         ATRefreshOption option = ATRefreshNone;
         if ( [title isEqualToString:@"下拉刷新"]) {
             option = ATHeaderRefresh | ATHeaderAutoRefresh;

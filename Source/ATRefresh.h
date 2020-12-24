@@ -7,9 +7,6 @@
 //
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-/**
- *  集成刷新控件
- */
 typedef NS_ENUM(NSUInteger, ATRefreshOption) {
     ATRefreshNone         = 0,
     ATHeaderRefresh       = 1 << 0,
@@ -23,26 +20,32 @@ typedef NS_ENUM(NSUInteger, ATRefreshOption) {
 @required
 - (NSArray <UIImage *>*)refreshFooterData;
 - (NSArray <UIImage *>*)refreshHeaderData;
-- (NSArray <UIImage *>*)refreshLoaderData;
-- (UIImage *)refreshEmptyData;
-- (UIImage *)refreshErrorData;
-- (BOOL)refreshNetAvailable;
-@optional
-- (NSString *)refreshLoaderToast;
-- (NSString *)refreshErrorToast;
-- (NSString *)refreshEmptyToast;
+
+- (UIImage *)refreshLogoData;
+- (NSAttributedString *)refreshTitle;
+- (NSAttributedString *)refreshSubtitle;
+
+- (CGFloat)refreshLogoVertica;
+- (CGFloat)refreshLogoSpace;
+- (UIColor *)refreshColor;
+- (UIButton *)refreshButton;
+- (CAAnimation *)refreshAnimation;
+
+@end
+
+@protocol ATRefreshDelegate<NSObject>
+@required
+- (void)refreshData:(NSInteger)page;
+
 @end
 
 @interface ATRefresh : NSObject
 
 + (UIColor *)colorWithRGB:(uint32_t)rgbValue;
-
 + (BOOL)at_iphoneX;
-
 + (CGFloat)at_statusBar;
-
 + (CGFloat)at_naviBar;
-
 + (CGFloat)at_tabBar;
+
 @end
 

@@ -23,7 +23,6 @@
     [super viewDidLoad];
     self.listData= @[].mutableCopy;
     [self showNavTitle:@"玄幻"];
-    [self setupEmpty:self.tableView];
     [self setupRefresh:self.tableView option:self.option];
 }
 - (void)refreshData:(NSInteger)page{

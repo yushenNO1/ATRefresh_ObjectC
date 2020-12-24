@@ -23,11 +23,13 @@
 		0FAD778B24693E5C00B0B01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAD778A24693E5C00B0B01A /* Assets.xcassets */; };
 		0FAD778E24693E5C00B0B01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAD778C24693E5C00B0B01A /* LaunchScreen.storyboard */; };
 		0FAD779124693E5C00B0B01A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD779024693E5C00B0B01A /* main.m */; };
-		0FAD779A24693FCB00B0B01A /* ATRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD779924693FCB00B0B01A /* ATRefreshController.m */; };
 		0FAD779D2469405F00B0B01A /* ATRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD779C2469405F00B0B01A /* ATRefresh.m */; };
 		0FAD77A1246950C500B0B01A /* BaseRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD77A0246950C500B0B01A /* BaseRefreshController.m */; };
 		0FAD77A62469527900B0B01A /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD77A22469527900B0B01A /* BaseTableViewController.m */; };
 		0FAD77A72469527900B0B01A /* BaseConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD77A42469527900B0B01A /* BaseConnectionController.m */; };
+		0FB0311E259319AB00BE0509 /* ATEmptyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB0311D259319AB00BE0509 /* ATEmptyController.m */; };
+		0FE67F042592100E00631AA5 /* ATRefreshData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE67F032592100E00631AA5 /* ATRefreshData.m */; };
+		0FE67F092592199700631AA5 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE67F082592199700631AA5 /* BaseNavigationController.m */; };
 		81FD264A78F508600DFBA59D /* libPods-ATRefresh_ObjectC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E93FD8B75C175525D9DE51 /* libPods-ATRefresh_ObjectC.a */; };
 		8F4E45AD24699E450035A813 /* ATRefresh_ObjectC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8F4E45AC24699E450035A813 /* ATRefresh_ObjectC.podspec */; };
 /* End PBXBuildFile section */
@@ -60,8 +62,6 @@
 		0FAD778D24693E5C00B0B01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FAD778F24693E5C00B0B01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FAD779024693E5C00B0B01A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0FAD779824693FCB00B0B01A /* ATRefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATRefreshController.h; sourceTree = "<group>"; };
-		0FAD779924693FCB00B0B01A /* ATRefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATRefreshController.m; sourceTree = "<group>"; };
 		0FAD779B2469405F00B0B01A /* ATRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATRefresh.h; sourceTree = "<group>"; };
 		0FAD779C2469405F00B0B01A /* ATRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATRefresh.m; sourceTree = "<group>"; };
 		0FAD779F246950C500B0B01A /* BaseRefreshController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseRefreshController.h; sourceTree = "<group>"; };
@@ -70,6 +70,12 @@
 		0FAD77A32469527900B0B01A /* BaseConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseConnectionController.h; sourceTree = "<group>"; };
 		0FAD77A42469527900B0B01A /* BaseConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseConnectionController.m; sourceTree = "<group>"; };
 		0FAD77A52469527900B0B01A /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		0FB0311C259319AB00BE0509 /* ATEmptyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATEmptyController.h; sourceTree = "<group>"; };
+		0FB0311D259319AB00BE0509 /* ATEmptyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATEmptyController.m; sourceTree = "<group>"; };
+		0FE67F022592100E00631AA5 /* ATRefreshData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATRefreshData.h; sourceTree = "<group>"; };
+		0FE67F032592100E00631AA5 /* ATRefreshData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATRefreshData.m; sourceTree = "<group>"; };
+		0FE67F072592199700631AA5 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		0FE67F082592199700631AA5 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		17B3DD7E0A6B9762502509DB /* Pods-ATRefresh_ObjectC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATRefresh_ObjectC.debug.xcconfig"; path = "Target Support Files/Pods-ATRefresh_ObjectC/Pods-ATRefresh_ObjectC.debug.xcconfig"; sourceTree = "<group>"; };
 		8F4E45AC24699E450035A813 /* ATRefresh_ObjectC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATRefresh_ObjectC.podspec; sourceTree = "<group>"; };
 		8F4E45AF2469A6270035A813 /* ATRefresh_ObjectC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATRefresh_ObjectC.h; sourceTree = "<group>"; };
@@ -139,6 +145,8 @@
 				0F2CA922246A3FC00069BA08 /* ATCollectionViewCell.h */,
 				0F2CA923246A3FC00069BA08 /* ATCollectionViewCell.m */,
 				0F2CA924246A3FC00069BA08 /* ATCollectionViewCell.xib */,
+				0FB0311C259319AB00BE0509 /* ATEmptyController.h */,
+				0FB0311D259319AB00BE0509 /* ATEmptyController.m */,
 			);
 			path = ATRefresh_ObjectC;
 			sourceTree = "<group>";
@@ -149,8 +157,8 @@
 				8F4E45AF2469A6270035A813 /* ATRefresh_ObjectC.h */,
 				0FAD779B2469405F00B0B01A /* ATRefresh.h */,
 				0FAD779C2469405F00B0B01A /* ATRefresh.m */,
-				0FAD779824693FCB00B0B01A /* ATRefreshController.h */,
-				0FAD779924693FCB00B0B01A /* ATRefreshController.m */,
+				0FE67F022592100E00631AA5 /* ATRefreshData.h */,
+				0FE67F032592100E00631AA5 /* ATRefreshData.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -164,6 +172,8 @@
 				0FAD77A22469527900B0B01A /* BaseTableViewController.m */,
 				0FAD779F246950C500B0B01A /* BaseRefreshController.h */,
 				0FAD77A0246950C500B0B01A /* BaseRefreshController.m */,
+				0FE67F072592199700631AA5 /* BaseNavigationController.h */,
+				0FE67F082592199700631AA5 /* BaseNavigationController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -303,19 +313,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FAD779A24693FCB00B0B01A /* ATRefreshController.m in Sources */,
 				0FAD778624693E5A00B0B01A /* ViewController.m in Sources */,
 				0F2CA913246A33EB0069BA08 /* ATConnectionController.m in Sources */,
 				0FAD77A1246950C500B0B01A /* BaseRefreshController.m in Sources */,
 				0FAD77A62469527900B0B01A /* BaseTableViewController.m in Sources */,
+				0FE67F092592199700631AA5 /* BaseNavigationController.m in Sources */,
 				0FAD77A72469527900B0B01A /* BaseConnectionController.m in Sources */,
 				0F2CA919246A3BEE0069BA08 /* ATModel.m in Sources */,
 				0FAD778024693E5A00B0B01A /* AppDelegate.m in Sources */,
+				0FE67F042592100E00631AA5 /* ATRefreshData.m in Sources */,
 				0F2CA91D246A3D210069BA08 /* ATTableViewCell.m in Sources */,
 				0F2CA916246A34FF0069BA08 /* ATTool.m in Sources */,
 				0FAD779D2469405F00B0B01A /* ATRefresh.m in Sources */,
 				0F2CA921246A3E5A0069BA08 /* UIImageView+ATLoad.m in Sources */,
 				0F2CA925246A3FC00069BA08 /* ATCollectionViewCell.m in Sources */,
+				0FB0311E259319AB00BE0509 /* ATEmptyController.m in Sources */,
 				0F2CA910246A33D60069BA08 /* ATTableController.m in Sources */,
 				0FAD779124693E5C00B0B01A /* main.m in Sources */,
 			);

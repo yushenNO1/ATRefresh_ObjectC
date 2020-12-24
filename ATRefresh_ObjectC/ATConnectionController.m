@@ -18,7 +18,6 @@
     [super viewDidLoad];
     self.listData= @[].mutableCopy;
     [self showNavTitle:@"玄幻"];
-    [self setupEmpty:self.collectionView];
     [self setupRefresh:self.collectionView option:ATRefreshDefault];
 }
 - (void)refreshData:(NSInteger)page{

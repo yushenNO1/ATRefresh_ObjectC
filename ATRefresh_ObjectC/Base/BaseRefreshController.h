@@ -6,15 +6,23 @@
 //  Copyright © 2020 wangws1990. All rights reserved.
 //
 
-#import "ATRefreshController.h"
+#import "ATRefreshData.h"
 #import <Masonry.h>
 #import "ATTool.h"
 #import "ATModel.h"
 #import <ATKit_ObjectC/ATKit.h>
-NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseRefreshController : ATRefreshController
+@interface BaseRefreshController : UIViewController<ATRefreshDataSource,ATRefreshDelegate>
+@property (strong, nonatomic,readonly) ATRefreshData *refreshData;
 
+//default
+- (void)setupRefresh:(UIScrollView *)scrollView option:(ATRefreshOption)option;
+//custom
+- (void)setupRefresh:(UIScrollView *)scrollView option:(ATRefreshOption)option image:(NSString *)image title:(NSString *)title;
+- (void)endRefresh:(BOOL)hasMore;
+
+- (void)endRefreshFailure;
+- (void)endRefreshFailure:(NSString *)error;
 @end
 
-NS_ASSUME_NONNULL_END
+

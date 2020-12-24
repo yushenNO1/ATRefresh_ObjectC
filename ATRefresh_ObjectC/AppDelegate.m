@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "ATTableController.h"
+#import "BaseNavigationController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,7 +21,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    BaseNavigationController *nvc = [[BaseNavigationController alloc] initWithRootViewController:[ViewController new]];
     self.window.rootViewController = nvc;
     return YES;
 }

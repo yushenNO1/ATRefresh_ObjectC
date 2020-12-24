@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UILabel *subTitlaleb;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLab;
-@property (strong, nonatomic) ATModel *model;
+@property (strong, nonatomic) ATModel *model ;
 @end
 
 NS_ASSUME_NONNULL_END
