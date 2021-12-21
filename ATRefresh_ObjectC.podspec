@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
 
   
   
-  s.dependency       'DZNEmptyDataSet', '~> 1.8.1'
-  s.dependency       'KVOController','~> 1.2.0'
-  s.dependency       'MJRefresh','~> 3.4.3'
+  s.dependency       'DZNEmptyDataSet'
+  s.dependency       'KVOController'
+  s.dependency       'MJRefresh'
   
   s.public_header_files = 'Source/*.h'
     
